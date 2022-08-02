@@ -2,15 +2,12 @@
 // Licensed under the Apache License, version 2.0
 // This file is derived from coinbase-wallet-sdk/packages/wallet-sdk/src/provider/SubscriptionManager.ts (2021/08/01).
 
-import SafeEventEmitter from "@metamask/safe-event-emitter";
-import {
-  JsonRpcEngineEndCallback,
-  JsonRpcEngineNextCallback,
-} from "json-rpc-engine";
-import { RequestArguments, Web3Provider } from "./Web3Provider";
+import SafeEventEmitter from '@metamask/safe-event-emitter';
+import { JsonRpcEngineEndCallback, JsonRpcEngineNextCallback } from 'json-rpc-engine';
+import { RequestArguments, Web3Provider } from './Web3Provider';
 
-const PollingBlockTracker = require("eth-block-tracker");
-const createSubscriptionManager = require("eth-json-rpc-filters/subscriptionManager");
+const PollingBlockTracker = require('eth-block-tracker');
+const createSubscriptionManager = require('eth-json-rpc-filters/subscriptionManager');
 const noop = () => {};
 
 export interface SubscriptionResult {
@@ -45,10 +42,7 @@ export class SubscriptionManager {
     this.subscriptionMiddleware = middleware;
   }
 
-  public async handleRequest(request: {
-    method: string;
-    params: any[];
-  }): Promise<SubscriptionResult> {
+  public async handleRequest(request: { method: string; params: any[] }): Promise<SubscriptionResult> {
     const result = {};
     await this.subscriptionMiddleware(request, result, noop, noop);
     return result;

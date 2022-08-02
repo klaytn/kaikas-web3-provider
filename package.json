@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run build",
-    "build": "./node_modules/.bin/tsc"
+    "build": "./node_modules/.bin/tsc",
+    "format": "./node_modules/.bin/prettier --write \"src/*.ts\""
   },
   "dependencies": {
     "@metamask/safe-event-emitter": "^2.0.0",
@@ -18,6 +19,7 @@
     "json-rpc-engine": "6.1.0"
   },
   "devDependencies": {
+    "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   },
   "repository": {
@@ -25,7 +27,7 @@
     "url": "git+https://github.com/klaytn/kaikas-web3-provider.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Klaytn Team",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/klaytn/kaikas-web3-provider/issues"
