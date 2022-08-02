@@ -1,0 +1,37 @@
+{
+  "name": "kaikas-web3-provider",
+  "version": "1.0.0",
+  "description": "Kaikas web3 provider",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build",
+    "build": "./node_modules/.bin/tsc"
+  },
+  "dependencies": {
+    "@metamask/safe-event-emitter": "^2.0.0",
+    "caver-js": "^1.9.0",
+    "eth-block-tracker": "4.4.3",
+    "eth-json-rpc-filters": "4.2.2",
+    "eth-rpc-errors": "4.0.2",
+    "json-rpc-engine": "6.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klaytn/kaikas-web3-provider.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klaytn/kaikas-web3-provider/issues"
+  },
+  "homepage": "https://github.com/klaytn/kaikas-web3-provider#readme",
+  "files": [
+    "lib/**/*"
+  ]
+}

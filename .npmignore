@@ -1,0 +1,10 @@
+# Dependency directories
+node_modules
+
+#npm package lock
+package-lock.json
+
+#project files
+src
+.gitignore
+tsconfig.json
