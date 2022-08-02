@@ -1,5 +1,5 @@
 {
-  "name": "kaikas-web3-provider",
+  "name": "@klaytn/kaikas-web3-provider",
   "version": "1.0.0",
   "description": "Kaikas web3 provider",
   "main": "lib/index.js",
