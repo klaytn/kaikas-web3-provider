@@ -1,6 +1,6 @@
 {
   "name": "@klaytn/kaikas-web3-provider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Kaikas web3 provider",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
