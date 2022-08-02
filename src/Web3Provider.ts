@@ -1,7 +1,7 @@
 // Copyright (c) 2018-2022 Coinbase, Inc. <https://www.coinbase.com/>
 // Licensed under the Apache License, version 2.0
 // This file is derived from coinbase-wallet-sdk/packages/wallet-sdk/src/provider/Web3Provider.ts (2021/08/01).
-// Modified and improved for the kaikas-web3-provider development.
+// Modified for the kaikas-web3-provider development.
 
 import { Callback } from './types';
 import { JSONRPCRequest, JSONRPCResponse } from './JSONRPC';

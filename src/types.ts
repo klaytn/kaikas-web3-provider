@@ -1,5 +1,7 @@
 // Copyright (c) 2018-2022 Coinbase, Inc. <https://www.coinbase.com/>
 // Licensed under the Apache License, version 2.0
+// This file is derived from coinbase-wallet-sdk/packages/wallet-sdk/src/types.ts (2021/08/01).
+// Modified for the kaikas-web3-provider development.
 
 interface Tag<T extends string, RealType> {
   __tag__: T;
@@ -30,9 +32,3 @@ export type RegExpString = OpaqueType<'RegExpString', string>;
 export const RegExpString = OpaqueType<RegExpString>();
 
 export type Callback<T> = (err: Error | null, result: T | null) => void;
-
-export enum ProviderType {
-  CoinbaseWallet = 'CoinbaseWallet',
-  MetaMask = 'MetaMask',
-  Unselected = '',
-}
