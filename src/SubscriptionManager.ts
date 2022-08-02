@@ -1,6 +1,6 @@
 // Copyright (c) 2018-2022 Coinbase, Inc. <https://www.coinbase.com/>
 // Licensed under the Apache License, version 2.0
-// This file is derived from coinbase-wallet-sdk/packages/wallet-sdk/src/provider/SubscriptionManager.ts (2021/08/01).
+// This file is derived from coinbase-wallet-sdk/packages/wallet-sdk/src/provider/SubscriptionManager.ts (2022/08/01).
 
 import SafeEventEmitter from '@metamask/safe-event-emitter';
 import { JsonRpcEngineEndCallback, JsonRpcEngineNextCallback } from 'json-rpc-engine';
