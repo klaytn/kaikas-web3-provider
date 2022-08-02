@@ -25,9 +25,9 @@ interface WatchAssetParams {
 export class KaikasWeb3Provider extends SafeEventEmitter implements Web3Provider {
   public kaikasProvider: any;
   public chainId: string;
-  private _addresses: string[] = [];
   public caver: any;
 
+  private _addresses: string[] = [];
   private readonly _subscriptionManager = new SubscriptionManager(this);
 
   constructor(provider: any) {
@@ -68,6 +68,10 @@ export class KaikasWeb3Provider extends SafeEventEmitter implements Web3Provider
   public getChainId(): string {
     const chainIdStr = this.kaikasProvider.networkVersion;
     return chainIdStr;
+  }
+
+  public get isKaikas(): boolean {
+    return true;
   }
 
   public get connected(): boolean {
