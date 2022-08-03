@@ -330,7 +330,19 @@ export class KaikasWeb3Provider extends SafeEventEmitter implements Web3Provider
         return this._eth_call(params);
     }
 
-    return this.kaikasProvider.sendAsync(request);
+    return this.kaikasSendAsync(request);
+  }
+
+  private async kaikasSendAsync(request: JSONRPCRequest): Promise<JSONRPCResponse> {
+    return new Promise<JSONRPCResponse>((resolve, reject) => {
+      this.kaikasProvider.sendAsync(request, (err: any, result: any) => {
+        if (result.result) {
+          resolve(result);
+        } else {
+          reject(err);
+        }
+      });
+    });
   }
 
   private async _eth_call(params: unknown[]): Promise<JSONRPCResponse> {
