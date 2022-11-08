@@ -266,9 +266,6 @@ export class KaikasWeb3Provider extends SafeEventEmitter implements Web3Provider
     const { method } = request;
 
     switch (method) {
-      case JSONRPCMethod.eth_accounts:
-        return this._eth_accounts();
-
       case JSONRPCMethod.net_version:
         return this._net_version();
 
@@ -280,8 +277,10 @@ export class KaikasWeb3Provider extends SafeEventEmitter implements Web3Provider
     }
   }
 
-  private _eth_accounts(): string[] {
-    return [...this._addresses];
+  private async _eth_accounts(): Promise<JSONRPCResponse> {
+    const res = await this.kaikasProvider.enable();
+    this._addresses = res;
+    return { jsonrpc: '2.0', id: 0, result: [...this._addresses] };
   }
 
   private _eth_chainId(): string {
@@ -296,6 +295,9 @@ export class KaikasWeb3Provider extends SafeEventEmitter implements Web3Provider
     const { method } = request;
     const params = request.params || [];
     switch (method) {
+      case JSONRPCMethod.eth_accounts:
+        return this._eth_accounts();
+
       case JSONRPCMethod.personal_sign:
         return this._personal_sign(params);
 
@@ -371,7 +373,6 @@ export class KaikasWeb3Provider extends SafeEventEmitter implements Web3Provider
   private async _wallet_watchAsset(params: unknown): Promise<JSONRPCResponse> {
     const request = (Array.isArray(params) ? params[0] : params) as WatchAssetParams;
 
-    console.log('watch asset', params, request);
     if (!request.type) {
       throw ethErrors.rpc.invalidParams({
         message: 'Type is required',
